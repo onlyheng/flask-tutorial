@@ -40,7 +40,7 @@ nav:
   - 目录: README.md
   - 前言: preface.md
   - 为本书付费: pay.md
-  - 第 1 章：准备工作: 1-preparation.md
+  - 第 1 章：准备工作: 2-preparation.md
   - 第 2 章：Hello, Flask!: 2-hello.md
   - 第 3 章：模板: 3-template.md
   - 第 4 章：静态文件: 4-static.md

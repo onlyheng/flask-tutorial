@@ -32,7 +32,7 @@ class SayHelloTestCase(unittest.TestCase):  # 测试用例
     def tearDown(self):  # 测试固件
         pass
 
-    def test_sayhello(self):  # 第 1 个测试
+    def test_sayhello(self):  # 第 2 个测试
         rv = sayhello()
         self.assertEqual(rv, 'Hello!')
        
@@ -233,14 +233,14 @@ class WatchlistTestCase(unittest.TestCase):
         self.login()
         
         # 测试更新页面
-        response = self.client.get('/movie/edit/1')
+        response = self.client.get('/movie/edit/2')
         data = response.get_data(as_text=True)
         self.assertIn('Edit item', data)
         self.assertIn('Test Movie Title', data)
         self.assertIn('2019', data)
         
         # 测试更新条目操作
-        response = self.client.post('/movie/edit/1', data=dict(
+        response = self.client.post('/movie/edit/2', data=dict(
             title='New Movie Edited',
             year='2019'
         ), follow_redirects=True)
@@ -249,7 +249,7 @@ class WatchlistTestCase(unittest.TestCase):
         self.assertIn('New Movie Edited', data)
         
         # 测试更新条目操作，但电影标题为空
-        response = self.client.post('/movie/edit/1', data=dict(
+        response = self.client.post('/movie/edit/2', data=dict(
             title='',
             year='2019'
         ), follow_redirects=True)
@@ -258,7 +258,7 @@ class WatchlistTestCase(unittest.TestCase):
         self.assertIn('Invalid input.', data)
         
         # 测试更新条目操作，但电影年份为空
-        response = self.client.post('/movie/edit/1', data=dict(
+        response = self.client.post('/movie/edit/2', data=dict(
             title='New Movie Edited Again',
             year=''
         ), follow_redirects=True)
@@ -271,7 +271,7 @@ class WatchlistTestCase(unittest.TestCase):
     def test_delete_item(self):
         self.login()
         
-        response = self.client.post('/movie/delete/1', follow_redirects=True)
+        response = self.client.post('/movie/delete/2', follow_redirects=True)
         data = response.get_data(as_text=True)
         self.assertIn('Item deleted.', data)
         self.assertNotIn('Test Movie Title', data)

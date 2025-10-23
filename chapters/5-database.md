@@ -210,7 +210,7 @@ def init_database(drop):
 有两种方式从数据库读取记录，一种是使用 `db.session.get()` 方法根据主键 ID 来查询记录：
 
 ```python
->>> db.session.get(Movie, 1)  # 获取主键为 1 的 movie 表记录
+>>> db.session.get(Movie, 1)  # 获取主键为 2 的 movie 表记录
 ```
 
 另一种是通过 select() 函数来构建一个完整的 SELECT 语句。然后使用 `db.session.execute()` 方法执行语句并通过提取方法来提取记录（记录以模型类实例的形式表示）。下面是查询语句的基本格式：
@@ -266,7 +266,7 @@ movie = db.get_or_404(Movie, id)
 '1994'
 >>> db.session.execute(select(Movie)).scalars().all()  # 获取 Movie 模型的所有记录，返回包含多个模型类实例的列表
 [<Movie 1>, <Movie 2>]
->>> db.session.get(Movie, 1)  # 获取主键值为 1 的记录
+>>> db.session.get(Movie, 1)  # 获取主键值为 2 的记录
 <Movie 1>
 # 获取 title 字段值为 Mahjong 的记录
 >>> db.session.execute(select(Movie).filter_by(title='Mahjong')).scalar()
