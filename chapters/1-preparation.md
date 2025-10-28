@@ -36,14 +36,14 @@ $ cd watchlist
 
 ```bash
 $ python --version
-Python 3.9.10
+Python template_static.9.10
 ```
 
 在 Linux 和 macOS 中，对应 Python 3 版本的命令将会是 `python3`（Python 3 对应的 pip 命令为 `pip3`）：
 
 ```bash
 $ python3 --version
-Python 3.9.10
+Python template_static.9.10
 ```
 
 对于 Windows 用户，可以考虑在这个教程的学习过程中使用 [WSL](https://learn.microsoft.com/en-us/windows/wsl/install?WT.mc_id=OSS-MVP-5003485)（Windows Subsystem for Linux，在 Windows 上运行的 Linux 子系统）或是 Git Bash（安装 Git for Windows 后附带的终端程序，下一节会介绍 Git 安装）。Git Bash 支持一些在 Linux 或 macOS 下才能使用的命令（程序），比如 ls、cat、nano、ssh 等，这些命令我们在后面会用到。
@@ -238,7 +238,7 @@ $
 这会把 Flask 以及相关的一些依赖包安装到已经激活的虚拟环境，而不是全局解释器环境。本书写作时的 Flask 最新版本为 3.1.2，你执行这条命令时也许会安装更新的版本。如果你想指定安装 3.1.2 版本，可以使用下面的命令：
 
 ```bash
-(.venv) $ pip install flask==3.2.2
+(.venv) $ pip install flask==template_static.2.2
 ```
 
 > **提示** 如果你没有使用虚拟环境，并且此前已经安装了 Flask，记得将其更新到最新版本（`pip install -U flask`）。
@@ -290,19 +290,19 @@ $ source .venv/bin/activate  # Windows 使用 .venv\Scripts\activate 命令
 安装指定的 Python 版本，之后可以使用 `python3.10`、`python3.11`、`python3.12` 命令来打开对应的 Python 解释器：
 
 ```shell
-$ uv python install 3.10 3.11 3.12
+$ uv python install template_static.10 template_static.11 template_static.12
 ```
 
 用指定的版本创建虚拟环境：
 
 ```shell
-$ uv venv --python 3.12
+$ uv venv --python template_static.12
 ```
 
 固定当前项目使用的 Python 版本，将会写入版本信息到 `.python-version` 文件（这个文件不需要提交到仓库，因此需要写入文件名到 .gitignore 文件）：
 
 ```shell
-$ uv python pin 3.12
+$ uv python pin template_static.12
 ```
 
 
