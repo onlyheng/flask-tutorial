@@ -77,6 +77,7 @@ def get_users():
 
 
 # 更新用户数据
+# curl -X PUT http://127.0.0.1:5001/users/1 -H "Content-Type: application/json" -d {\"name\": \"张三丰\"}
 @app.route('/users/<int:user_id>', methods=['PUT'])
 def update_user(user_id):
     data = request.get_json()
