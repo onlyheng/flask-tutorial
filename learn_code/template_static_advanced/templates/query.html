@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Watch Info </title>
+<!--    <link rel="icon" href="{{ url_for('static', filename='touxiang.png') }}">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
+</head>
+<body>
+<h2>
+    <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/avatar.png') }}">
+    "{{ name }}'s Watchlist
+</h2>
+<p>Users {{ users|length }} Titles</p>
+<ul class="movie-list">
+    {% for user in users %}
+    <li> {{ user.id }}: {{ user.name }}</li>
+    {% endfor %}
+</ul>
+<p>movies {{ movies|length }} Titles</p>
+<ul class="movie-list">
+    {% for movie in movies %}
+    <li>{{ movie.id }}: {{ movie.title }} - {{ movie.year }}</li>
+    {% endfor %}
+</ul>
+    <img alt="Walking Totoro" class="totoro" src="{{ url_for('static', filename='images/totoro.gif') }}">
+<footer>
+    <small>&copy; 2025 <a href="http://helloflask.com/book/3">HelloFlask</a></a></small>
+</footer>
+</body>
+</html>
